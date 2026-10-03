@@ -1,0 +1,15 @@
+{
+  "name": "duong-kinh-website",
+  "version": "1.0.0",
+  "description": "Website giới thiệu dự án khu đô thị Dương Kinh (Hải Phòng) của Vingroup/Vinhomes - Node.js + Express + EJS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}

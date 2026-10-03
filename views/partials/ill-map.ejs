@@ -1,0 +1,57 @@
+<svg viewBox="0 0 700 520" role="img" aria-label="Sơ đồ vị trí khu đô thị trong thành phố Hải Phòng (minh họa)">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#bfe0f2"/><stop offset="1" stop-color="#7db6dc"/>
+    </linearGradient>
+    <radialGradient id="pulse" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#c4623a" stop-opacity=".55"/><stop offset="1" stop-color="#c4623a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="700" height="520" fill="url(#sea)"/>
+  <!-- Đất liền -->
+  <path d="M0 0 H470 C450 70 470 120 440 170 C420 215 470 250 450 290 C430 330 500 350 470 400 C450 440 400 470 330 520 H0Z" fill="#eaf0dc" stroke="#9db187" stroke-width="2"/>
+  <!-- Bán đảo Đồ Sơn -->
+  <path d="M470 330 C520 330 590 380 610 440 C560 430 520 410 490 380Z" fill="#eaf0dc" stroke="#9db187" stroke-width="2"/>
+  <!-- Sông -->
+  <g fill="none" stroke="#7db6dc" stroke-width="9" stroke-linecap="round">
+    <path d="M60 130 C160 160 230 130 300 170 C360 205 400 190 450 240"/>
+    <path d="M80 330 C180 300 250 340 330 310 C390 290 430 330 470 340" stroke-width="6"/>
+  </g>
+  <!-- Nhãn quận / huyện -->
+  <g class="map-label">
+    <text x="90" y="95">Thủy Nguyên</text>
+    <text x="200" y="215">Hồng Bàng · Trung tâm</text>
+    <text x="330" y="135">Hải An</text>
+    <text x="90" y="290">Kiến An</text>
+    <text x="110" y="440">Kiến Thụy</text>
+    <text x="500" y="470">Đồ Sơn</text>
+    <text x="520" y="205" class="sea-text">Vịnh Bắc Bộ</text>
+  </g>
+  <!-- Sân bay Cát Bi -->
+  <g transform="translate(360 165)">
+    <circle r="11" fill="#fff" stroke="#10264f" stroke-width="2"/>
+    <path d="M0 -6 L2 -1 L7 1 L2 2 L0 7 L-2 2 L-7 1 L-2 -1Z" fill="#10264f"/>
+  </g>
+  <text x="378" y="170" class="map-small">Sân bay Cát Bi</text>
+  <!-- Trung tâm -->
+  <circle cx="250" cy="195" r="7" fill="#10264f"/>
+  <!-- Trục nối -->
+  <path d="M250 195 C260 260 300 320 360 370" fill="none" stroke="#c4623a" stroke-width="4" stroke-dasharray="3 8" stroke-linecap="round"/>
+  <path d="M360 370 C410 380 470 380 510 405" fill="none" stroke="#c4623a" stroke-width="4" stroke-dasharray="3 8" stroke-linecap="round"/>
+  <text x="228" y="310" class="map-small" transform="rotate(62 228 310)">Trục Phạm Văn Đồng</text>
+  <!-- Dự án -->
+  <circle class="pulse" cx="360" cy="372" r="70" fill="url(#pulse)"/>
+  <g transform="translate(360 372)">
+    <circle r="16" fill="#c4623a" stroke="#fff" stroke-width="3"/>
+    <path d="M-6 6V-4L0 -9L6 -4V6Z" fill="#fff"/>
+  </g>
+  <g transform="translate(300 400)">
+    <rect width="150" height="28" rx="14" fill="#10264f"/>
+    <text x="75" y="19" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">Vinhomes Dương Kinh</text>
+  </g>
+  <text x="20" y="500" class="map-small">Sơ đồ minh họa tương đối, không theo tỷ lệ</text>
+  <!-- La bàn -->
+  <g transform="translate(650 50)">
+    <circle r="22" fill="#fff" stroke="#10264f"/><path d="M0 -16 L6 6 L0 2 L-6 6Z" fill="#c4623a"/><text y="-27" text-anchor="middle" font-size="12" font-weight="700" fill="#10264f">B</text>
+  </g>
+</svg>

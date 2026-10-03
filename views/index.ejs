@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= p.name %> – Khu đô thị Dương Kinh, Hải Phòng</title>
+  <meta name="description" content="Tìm hiểu dự án khu đô thị <%= p.name %> của Vingroup tại Dương Kinh – Kiến Thụy, Hải Phòng: quy mô <%= fmt(p.area, 1) %> ha, vốn đầu tư <%= fmt(p.investment.total) %> tỷ đồng, mặt bằng, sản phẩm và tiến độ.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2310264f'/%3E%3Cpath d='M7 24V13l9-6 9 6v11z' fill='%23c9a24b'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="nav" id="top">
+  <a class="brand" href="#top"><span class="brand-mark">D</span><span>Dương Kinh <em>Hải Phòng</em></span></a>
+  <button class="nav-toggle" aria-label="Mở menu" aria-expanded="false">☰</button>
+  <nav id="menu">
+    <a href="#tong-quan">Tổng quan</a>
+    <a href="#vi-tri">Vị trí</a>
+    <a href="#mat-bang">Mặt bằng</a>
+    <a href="#san-pham">Sản phẩm</a>
+    <a href="#co-cau">Cơ cấu</a>
+    <a href="#tien-do">Tiến độ</a>
+    <a class="cta-link" href="#dang-ky">Nhận thông tin</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <%- include('partials/ill-hero') %>
+  <div class="hero-inner">
+    <p class="eyebrow">Vingroup · Hải Phòng</p>
+    <h1><%= p.name %></h1>
+    <p class="lead"><%= p.tagline %></p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#mat-bang">Xem sơ đồ mặt bằng</a>
+      <a class="btn btn-ghost" href="#tong-quan">Tổng quan dự án</a>
+    </div>
+  </div>
+</section>
+
+<!-- SỐ LIỆU -->
+<section class="stats">
+  <div class="stat"><b data-count="<%= p.area %>" data-dec="1">0</b><span>ha diện tích</span></div>
+  <div class="stat"><b data-count="<%= p.population %>">0</b><span>cư dân dự kiến</span></div>
+  <div class="stat"><b data-count="<%= p.investment.total %>">0</b><span>tỷ đồng tổng mức đầu tư</span></div>
+  <div class="stat"><b data-count="<%= p.durationYears %>">0</b><span>năm thời hạn dự án</span></div>
+</section>
+
+<!-- TỔNG QUAN -->
+<section class="sec" id="tong-quan">
+  <div class="wrap two">
+    <div class="reveal">
+      <p class="eyebrow dark">Tổng quan</p>
+      <h2>Một đô thị mới cho thành phố lớn thứ hai miền Bắc</h2>
+      <p>Khu đô thị <strong><%= p.name %></strong> (báo chí còn gọi là <em><%= p.alias %></em>) do <%= p.developer %> làm chủ đầu tư, trải rộng trên <strong><%= fmt(p.area, 1) %> ha</strong> thuộc quận Dương Kinh và huyện Kiến Thụy, thành phố Hải Phòng.</p>
+      <p>Dự án khởi công ngày <strong><%= p.groundbreaking %></strong>, là dự án thứ 5 của Vingroup tại Hải Phòng sau Vinhomes Imperia, Marina, Riva City và Cầu Rào 2.</p>
+      <dl class="facts">
+        <div><dt>Địa điểm</dt><dd><%= p.location.district %>; <%= p.location.communes %></dd></div>
+        <div><dt>Chủ đầu tư</dt><dd><%= p.developer %></dd></div>
+        <div><dt>Quy mô dân số</dt><dd>≈ <%= fmt(p.population) %> người</dd></div>
+        <div><dt>Thời hạn</dt><dd><%= p.durationYears %> năm kể từ khi giao đất</dd></div>
+      </dl>
+    </div>
+    <div class="reveal card-art">
+      <%- include('partials/ill-product', { id: 'bietthu' }) %>
+      <p class="caption">Minh họa phong cách biệt thự ven mặt nước — hình vẽ tượng trưng.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VỊ TRÍ -->
+<section class="sec alt" id="vi-tri">
+  <div class="wrap two flip">
+    <div class="map-box reveal"><%- include('partials/ill-map') %></div>
+    <div class="reveal">
+      <p class="eyebrow dark">Vị trí</p>
+      <h2>Cửa ngõ phía Nam, sát Đồ Sơn</h2>
+      <p>Dự án nằm ở khu vực phường Hòa Nghĩa (Dương Kinh) và hai xã Đông Phương, Đại Đồng (Kiến Thụy) — vùng đất nối trung tâm thành phố với bán đảo Đồ Sơn và dải ven biển.</p>
+      <ul class="ticks">
+        <li>Liền kề trục Phạm Văn Đồng, tuyến chính nối nội đô – Đồ Sơn</li>
+        <li>Cùng thành phố với trung tâm hành chính – thương mại và sân bay quốc tế Cát Bi</li>
+        <li>Vị trí tiếp giáp vùng du lịch biển Đồ Sơn</li>
+      </ul>
+      <p class="note">Sơ đồ chỉ minh họa quan hệ vị trí tương đối, không dùng để đo khoảng cách.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MẶT BẰNG -->
+<section class="sec" id="mat-bang">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow dark">Sơ đồ phân khu</p>
+      <h2>Mặt bằng tổng thể minh họa</h2>
+      <p>Di chuột hoặc chạm vào từng khu để xem chức năng. Bố cục là hình vẽ khái niệm dựa trên cơ cấu sản phẩm đã công bố, <strong>không phải bản quy hoạch chi tiết được phê duyệt</strong>.</p>
+    </div>
+    <div class="plan reveal">
+      <div class="plan-canvas"><%- include('partials/ill-masterplan') %></div>
+      <aside class="plan-side">
+        <div class="plan-info" id="planInfo" aria-live="polite">
+          <h3>Chọn một phân khu</h3>
+          <p>Nhấn vào vùng màu trên bản đồ hoặc chọn trong danh sách bên dưới.</p>
+        </div>
+        <ul class="legend" id="legend">
+          <li data-zone="bietthu"><i style="background:#c9a24b"></i>Biệt thự</li>
+          <li data-zone="lienke"><i style="background:#2f7f79"></i>Nhà liền kề</li>
+          <li data-zone="thuongmai"><i style="background:#c4623a"></i>Phố thương mại / Shophouse</li>
+          <li data-zone="noxh"><i style="background:#4b6cb7"></i>Chung cư cao tầng (NOXH)</li>
+          <li data-zone="giaoduc"><i style="background:#7a5bb0"></i>Giáo dục</li>
+          <li data-zone="yte"><i style="background:#d1495b"></i>Y tế</li>
+          <li data-zone="congvien"><i style="background:#5f9a4e"></i>Công viên & hồ trung tâm</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- SẢN PHẨM -->
+<section class="sec alt" id="san-pham">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow dark">Sản phẩm</p>
+      <h2>Bốn nhóm sản phẩm chính</h2>
+      <p>Cơ cấu sơ bộ theo hồ sơ mời gọi đầu tư: khoảng 5.000 căn liền kề, 1.300 căn biệt thự và quỹ đất chung cư cao tầng nhà ở xã hội.</p>
+    </div>
+    <div class="cards">
+      <% p.products.forEach(function(x) { %>
+      <article class="card reveal" style="--accent: <%= x.color %>">
+        <%- include('partials/ill-product', { id: x.id }) %>
+        <div class="card-body">
+          <h3><%= x.name %></h3>
+          <p><%= x.desc %></p>
+          <div class="meta">
+            <span><% if (x.units) { %><b>≈ <%= fmt(x.units) %></b> căn<% } else { %>Số căn: <b>chưa công bố</b><% } %></span>
+            <span><% if (x.landHa) { %><b><%= fmt(x.landHa, 1) %></b> ha<% } else { %>Diện tích: <b>—</b><% } %></span>
+          </div>
+          <div class="tags"><% x.tags.forEach(function(t) { %><span><%= t %></span><% }) %></div>
+        </div>
+      </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- CƠ CẤU -->
+<section class="sec" id="co-cau">
+  <div class="wrap two">
+    <div class="reveal">
+      <p class="eyebrow dark">Cơ cấu sử dụng đất</p>
+      <h2>Phần lớn diện tích dành cho hạ tầng và không gian chung</h2>
+      <p>Đất ở theo ba nhóm sản phẩm đã công bố chiếm khoảng <b><%= fmt(p.landUse.mappedHa, 1) %> ha</b>. Phần còn lại, ước tính theo hiệu số, khoảng <b><%= fmt(p.landUse.otherHa, 1) %> ha</b>, gồm đường giao thông, cây xanh, mặt nước, công trình công cộng, thương mại và các loại đất khác.</p>
+      <ul class="bars">
+        <% p.products.filter(function(x){ return x.landHa; }).forEach(function(x) { %>
+        <li><span><%= x.name %></span><div><i style="width: <%= (x.landHa / p.area * 100).toFixed(1) %>%; background: <%= x.color %>"></i></div><b><%= fmt(x.landHa, 1) %> ha</b></li>
+        <% }) %>
+        <li><span>Hạ tầng, cây xanh, khác</span><div><i style="width: <%= (p.landUse.otherHa / p.area * 100).toFixed(1) %>%; background:#8fbf7a"></i></div><b><%= fmt(p.landUse.otherHa, 1) %> ha</b></li>
+      </ul>
+    </div>
+    <div class="reveal donut-wrap">
+      <svg viewBox="0 0 220 220" class="donut" role="img" aria-label="Biểu đồ tròn cơ cấu sử dụng đất">
+        <%
+          const parts = p.products.filter(function(x){ return x.landHa; }).map(function(x){ return { v: x.landHa, c: x.color, n: x.name }; });
+          parts.push({ v: p.landUse.otherHa, c: '#8fbf7a', n: 'Hạ tầng, cây xanh, khác' });
+          const R = 80, C = 2 * Math.PI * R; let off = 0;
+        %>
+        <circle cx="110" cy="110" r="<%= R %>" fill="none" stroke="#eef0ea" stroke-width="34"/>
+        <% parts.forEach(function(s) { const len = s.v / p.area * C; %>
+        <circle cx="110" cy="110" r="<%= R %>" fill="none" stroke="<%= s.c %>" stroke-width="34"
+                stroke-dasharray="<%= len.toFixed(2) %> <%= (C - len).toFixed(2) %>" stroke-dashoffset="<%= (-off).toFixed(2) %>" transform="rotate(-90 110 110)"><title><%= s.n %>: <%= fmt(s.v, 1) %> ha</title></circle>
+        <% off += len; }) %>
+        <text x="110" y="106" text-anchor="middle" class="d-big"><%= fmt(p.area, 1) %></text>
+        <text x="110" y="128" text-anchor="middle" class="d-small">ha tổng diện tích</text>
+      </svg>
+      <div class="invest">
+        <h3>Tổng mức đầu tư: <%= fmt(p.investment.total) %> tỷ đồng</h3>
+        <div class="stack">
+          <i style="width: <%= (p.investment.implementation / p.investment.total * 100).toFixed(1) %>%"></i>
+          <i style="width: <%= (p.investment.clearance / p.investment.total * 100).toFixed(1) %>%; background:#c4623a"></i>
+        </div>
+        <p><span class="dot" style="background:#10264f"></span>Chi phí thực hiện dự án: <b><%= fmt(p.investment.implementation, 2) %> tỷ</b></p>
+        <p><span class="dot" style="background:#c4623a"></span>Giải phóng mặt bằng: <b><%= fmt(p.investment.clearance, 1) %> tỷ</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIẾN ĐỘ -->
+<section class="sec alt" id="tien-do">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow dark">Tiến độ</p>
+      <h2>Lộ trình triển khai</h2>
+    </div>
+    <ol class="timeline">
+      <% p.timeline.forEach(function(t) { %>
+      <li class="reveal st-<%= t.status %>">
+        <span class="when"><%= t.when %></span>
+        <h3><%= t.title %></h3>
+        <p><%= t.text %></p>
+      </li>
+      <% }) %>
+    </ol>
+  </div>
+</section>
+
+<!-- TIỆN ÍCH -->
+<section class="sec" id="tien-ich">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow dark">Tiện ích</p>
+      <h2>Định hướng hệ tiện ích nội khu</h2>
+      <p>Các nhóm tiện ích dưới đây là định hướng theo mô hình khu đô thị Vinhomes; danh mục và vị trí cụ thể phụ thuộc quy hoạch chi tiết được phê duyệt.</p>
+    </div>
+    <div class="amen">
+      <% p.amenities.forEach(function(a) { %>
+      <div class="amen-item reveal">
+        <div class="ico"><%- include('partials/icon', { name: a.icon }) %></div>
+        <h3><%= a.title %></h3>
+        <p><%= a.text %></p>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- ĐĂNG KÝ -->
+<section class="sec cta" id="dang-ky">
+  <div class="wrap two">
+    <div class="reveal">
+      <p class="eyebrow">Nhận thông tin</p>
+      <h2>Đăng ký để nhận cập nhật về dự án</h2>
+      <p>Để lại thông tin, chúng tôi sẽ gửi tin tức mới về tiến độ và sản phẩm khi có công bố chính thức.</p>
+    </div>
+    <form id="leadForm" class="form reveal" novalidate>
+      <label>Họ và tên<input name="name" required maxlength="80" autocomplete="name"></label>
+      <label>Số điện thoại<input name="phone" required inputmode="tel" maxlength="20" autocomplete="tel" placeholder="0901234567"></label>
+      <label>Quan tâm đến
+        <select name="interest">
+          <option value="">— Chọn —</option>
+          <% p.products.forEach(function(x) { %><option><%= x.name %></option><% }) %>
+        </select>
+      </label>
+      <label>Ghi chú<textarea name="note" rows="3" maxlength="500"></textarea></label>
+      <button class="btn btn-gold" type="submit">Gửi đăng ký</button>
+      <p class="form-msg" id="formMsg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<!-- NGUỒN -->
+<section class="sec sources" id="nguon">
+  <div class="wrap">
+    <h2>Nguồn tham khảo & lưu ý</h2>
+    <ul>
+      <% p.sources.forEach(function(s) { %><li><a href="<%= s.url %>" target="_blank" rel="noopener"><%= s.title %></a></li><% }) %>
+    </ul>
+    <p class="note">Số liệu tổng hợp từ báo chí và có thể thay đổi theo quyết định phê duyệt cuối cùng; một số nguồn đưa mức vốn khác nhau theo từng giai đoạn công bố (website này dùng con số 23.218 tỷ đồng). Mọi hình ảnh là <strong>minh họa vẽ tượng trưng</strong>, không phải phối cảnh chính thức. Đây là website tham khảo độc lập, <strong>không phải kênh chính thức của Vingroup hay Vinhomes</strong>, và nội dung không phải lời khuyên đầu tư.</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap"><span>© <%= new Date().getFullYear() %> Dương Kinh Hải Phòng – website tham khảo</span><a href="#top">Lên đầu trang ↑</a></div>
+</footer>
+
+<script id="zone-data" type="application/json"><%- JSON.stringify({
+  bietthu:   { title: 'Biệt thự', text: 'Đơn lập, song lập, tứ lập ven hồ và công viên. Khoảng 1.300 căn trên 18,8 ha.' },
+  lienke:    { title: 'Nhà liền kề', text: 'Các tiểu khu liền kề có đường nội bộ và tiện ích sát nhà. Khoảng 5.000 căn trên 36,6 ha.' },
+  thuongmai: { title: 'Phố thương mại / Shophouse', text: 'Dải thương mại dọc trục chính, kết hợp ở và kinh doanh. Số lượng chi tiết chưa được công bố.' },
+  noxh:      { title: 'Chung cư cao tầng (NOXH)', text: 'Quỹ đất 13,9 ha cho nhà ở chung cư cao tầng, nhà ở xã hội.' },
+  giaoduc:   { title: 'Khu giáo dục (định hướng)', text: 'Quỹ đất dành cho trường học trong nội khu. Vị trí minh họa, chờ quy hoạch chi tiết.' },
+  yte:       { title: 'Khu y tế (định hướng)', text: 'Dự kiến bố trí cơ sở y tế phục vụ cư dân. Vị trí minh họa, chờ quy hoạch chi tiết.' },
+  congvien:  { title: 'Công viên & hồ trung tâm', text: 'Trục cảnh quan xanh – nước làm lõi, kết nối các phân khu bằng đường dạo.' }
+}).replace(/</g, '\\u003c') %></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
